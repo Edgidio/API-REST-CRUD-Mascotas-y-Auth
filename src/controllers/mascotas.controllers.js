@@ -1,11 +1,25 @@
 const controllers = {}
 
-controllers.GET_macotas = ( (req, res)=>{
-    res.send('mascotas')
+//imports
+const Mascota = require('../models/mascota.model');
+
+controllers.GET_macotas = ( async (req, res)=>{
+
+    const mascotas = await Mascota.find();
+
+    res.json({
+        mascotas
+    });
+
 });
 
 controllers.POST_macotas = ( (req, res)=>{
-    res.send('crear mascotas')
+
+    res.json({
+        Success:true,
+        mascota:req.body.value
+    });
+    
 });
 
 controllers.PUT_macotas = ( (req, res)=>{

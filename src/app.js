@@ -22,6 +22,7 @@ app.use(require('./routes/informacion.routes')) //Route informacion
 
 app.use('/mascotas', require('./routes/mascotas.routes')); // Route mascotas
 
-
+//connection to the database
+require('./db');
 
 module.exports = app
